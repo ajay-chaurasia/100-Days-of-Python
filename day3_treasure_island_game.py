@@ -63,10 +63,20 @@ while life > 0:
     elif not input("\nYou have arrived at a lake.\nThere is an island in the middle of the lake.\nDo you want to \"wait\" for a boat or \"swim\" to the island? ").lower() == "wait":
         print("You are attacked by Crocodiles. Game Over!")
         life -= 1
-    elif not input("\nOn the island you see three doors - \"Red\", \"Yellow\" and \"Blue\".\nWhich door do you open? ").lower() == "blue":
-        print("Wrong door! You fall into a hole and die!\nGAME OVER!")
-        life -= 1
     else:
-        print("\n\nCongratulations!\nYou found the hidden treasure of King Tottem!")
-        break
+        choice = input("\nOn the island you see three doors - \"Red\", \"Yellow\" and \"Blue\".\nWhich door do you open? ").lower()
+        if choice == "blue":
+            print("\n\nCongratulations!\nYou found the hidden treasure of King Tottem!")
+            break
+        elif choice == "red":
+            print("You have opened the room of fire!\nGAME OVER!")
+            life -= 1
+        elif choice == "yellow":
+            print("You have opened the room full of beasts!\nGAME OVER!")
+            life -= 1
+        else:
+            print("This isn't a door!\nGAME OVER!")
+            life -= 1
+
+print("\nThank you for playing!")
     
